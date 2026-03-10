@@ -3,10 +3,10 @@ import Script from 'next/script'
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      {/* Histats Tracking Baru - ID: 5013673 */}
+      {/* 1. PRIORITAS UTAMA: Histats (Agar tercatat sebelum iklan jalan) */}
       <Script 
         id="histats-script" 
-        strategy="afterInteractive"
+        strategy="beforeInteractive" // KITA PAKAI STRATEGI TERCEPAT
         dangerouslySetInnerHTML={{
           __html: `
             var _Hasync= _Hasync|| [];
@@ -22,6 +22,7 @@ export default function MyApp({ Component, pageProps }) {
         }}
       />
       
+      {/* 2. Komponen Web Kamu */}
       <Component {...pageProps} />
     </>
   )
